@@ -71,57 +71,86 @@ main {
     color: var(--subtext);
 }
 
-.slider__main {
+/* Styling the range slider */
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 80%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    margin-top: 3rem;
+}
+
+input[type=range]:focus {
+    outline: none; /* Removes the blue border. */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    background: url('./images/slider-thumb.svg');
+    background-size: contain;
+    box-shadow: 0 1.4rem 3.2rem hsl(174, 86%, 45%);
+    border-radius: 50%;
+    margin-top: -1.2rem;
+}
+
+
+input[type=range]::-moz-range-thumb {
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    background: url('./images/slider-thumb.svg');
+    background-size: contain;
+    box-shadow: 0 1.4rem 3.2rem hsl(174, 86%, 45%);
+    border-radius: 50%;
+    border: none;
+    margin-top: -1.2rem;
+}
+
+input[type=range]::-ms-thumb {
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    background: url('./images/slider-thumb.svg');
+    background-size: contain;
+    box-shadow: 0 1.4rem 3.2rem hsl(174, 86%, 45%);
+    border-radius: 50%;
+    margin-top: -1.2rem;
+}
+
+input[type=range]::-moz-range-track {
     width: 90%;
     height: .5rem;
     border-radius: 1rem;
     background:hsl(224, 65%, 95%);
-    margin: 0 auto;
     position: relative;
-    margin: 3rem auto;
 }
 
-.slider__main-progress {
-    position: absolute;
-    width: 50%;
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+    width: 90%;
     height: .5rem;
     border-radius: 1rem;
-    background:hsl(174, 77%, 80%);
-    margin: 0 auto;
+    background:hsl(224, 65%, 95%);
+    position: relative;
 }
 
-.slider__main-control {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 3rem;
-    height: 3rem;
-    background: hsl(174, 86%, 45%);
-    border-radius: 50%;
-    box-shadow: 0 1.4rem 3.2rem hsl(174, 86%, 45%);
+input[type=range]::-webkit-slider-runnable-track {
+    width: 90%;
+    height: .5rem;
+    border-radius: 1rem;
+    background:hsl(224, 65%, 95%);
+    position: relative;
 }
 
-.slider__main-control__left {
-    width: 0;
-    height: 0;
-    border-top: .4rem solid transparent;
-    border-right: .5rem solid hsl(223, 50%, 87%);
-    border-bottom: .4rem solid transparent;
-    margin-right: .3rem;
-}
-
-.slider__main-control__right {
-    width: 0;
-    height: 0;
-    border-top: .4rem solid transparent;
-    border-left: .6rem solid hsl(223, 50%, 87%);
-    border-bottom: .4rem solid transparent;
-    margin-left: .3rem;
-}
+/* -------------------------*/
 
 .slider__cost {
     color: var(--headings);
@@ -143,6 +172,7 @@ main {
     margin: 3rem 0;
     max-width: 800px;
     position: relative;
+    cursor: pointer;
 }
 
 .slider__toggle-left{
@@ -244,6 +274,7 @@ main {
     margin-top: 1rem;
     font-size: .75rem;
     letter-spacing: 0.06rem;
+    cursor: pointer;
 }
 
 .top-overlay {
