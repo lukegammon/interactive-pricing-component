@@ -303,4 +303,8 @@ footer {
     .slider__toggle-discount {
         right: 1rem;
     }
+
+    .slider__views {
+        text-align: center;
+    }
 }
